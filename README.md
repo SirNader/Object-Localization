@@ -1,4 +1,4 @@
-# Object-Localization
+# Object Localization using Tensorflow and Keras
 
 **This project borrows heavily from this repository [object-localization](https://github.com/lars76/object-localization) by Lars Nieradzik.**
 
