@@ -15,7 +15,7 @@ from tensorflow.keras.backend import epsilon
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--size", type=int, required=False, Default=224)
-parser.add_argument("--alpha", type=float, required=False, Default=0.35)
+parser.add_argument("--alpha", type=float, required=False, Default=1.0)
 parser.add_argument("--grid", type=int, required=False, Default=7)
 parser.add_argument("--epochs", type=int, required=False, Default=200)
 parser.add_argument("--batch_size", type=int, required=False, Default=32)
