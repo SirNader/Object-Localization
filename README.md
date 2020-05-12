@@ -1,6 +1,6 @@
 # Object Localization using Tensorflow and Keras
 
-**This project borrows heavily from this repository [object-localization](https://github.com/lars76/object-localization) by Lars Nieradzik.**
+**This project is based on this repository [object-localization](https://github.com/lars76/object-localization) by Lars Nieradzik, with few modifications**
 
 
 It shows how to localize objects in images by using simple convolutional neural networks.
