@@ -1,7 +1,7 @@
 import csv
 import math
 import os
-
+import argparse
 import numpy as np
 import tensorflow as tf
 from PIL import Image, ImageDraw, ImageEnhance
@@ -16,18 +16,28 @@ from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.backend import epsilon
 from tensorflow.keras.models import model_from_json
 
-# 0.35, 0.5, 0.75, 1.0
-ALPHA = 0.35
+parser = argparse.ArgumentParser()
+parser.add_argument("--size", type=int, required=False, Default=224)
+parser.add_argument("--alpha", type=float, required=False, Default=0.35)
+parser.add_argument("--grid", type=int, required=False, Default=7)
+parser.add_argument("--epochs", type=int, required=False, Default=200)
+parser.add_argument("--batch_size", type=int, required=False, Default=32)
 
-GRID_SIZE = 7
-IMAGE_SIZE = 224
+args = parser.parse_args()
+
+
+# 0.35, 0.5, 0.75, 1.0
+ALPHA = args.alpha
+
+GRID_SIZE = args.grid
+IMAGE_SIZE = args.size
 
 # first train with frozen weights, then fine tune
 TRAINABLE = False
 WEIGHTS = "model-0.64.h5"
 
-EPOCHS = 200
-BATCH_SIZE = 32
+EPOCHS = args.epochs
+BATCH_SIZE = args.batch_size
 PATIENCE = 15
 LEARNING_RATE = 1e-4
 WEIGHT_DECAY = 0.0005
