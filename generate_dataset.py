@@ -5,10 +5,19 @@ import os
 import xml.etree.ElementTree as ET
 
 import numpy as np
+import argparse
 
-DATASET_FOLDER = "images/"
-TRAIN_OUTPUT_FILE = "train.csv"
-VALIDATION_OUTPUT_FILE = "validation.csv"
+parser = argparse.ArgumentParser()
+
+parser.add_argument("--dataset", type=str, required=True, help='train.csv directory'))
+parser.add_argument("--train", type=str, required=True, help='train.csv directory')
+parser.add_argument("--test", type=str, required=True, help='test.csv directory'))
+
+args = parser.parse_args()
+
+DATASET_FOLDER = args.dataset
+TRAIN_OUTPUT_FILE = args.train
+VALIDATION_OUTPUT_FILE = args.test
 
 SPLIT_RATIO = 0.8
 
